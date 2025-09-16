@@ -9,6 +9,7 @@
 \RequirePackage{tikz}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage[abspath]{currfile}
+\RequirePackage{catchfile}
 
 \makeatletter
 
@@ -22,16 +23,17 @@
 \renewcommand{\date}[1]{\renewcommand\@date{#1}}
 
 % Logo macros
-\getabspath{saxion.sty}
+\CatchFileDef{\packagedir}{|"dirname `kpsewhich saxion.sty`"}{}%
+\StrGobbleRight{\packagedir}{1}[\packagedir]
 
-\newcommand{\@logodutch}{\theabsdir/img/lg_saxion_rgb.jpg}
-\newcommand{\@logointernational}{\theabsdir/img/lg_saxion_uas_rgb.jpg}
+\newcommand{\@logodutch}{\packagedir/img/lg_saxion_rgb.jpg}
+\newcommand{\@logointernational}{\packagedir/img/lg_saxion_uas_rgb.jpg}
 
 \newcommand{\@logo}{
     \IfFileExists{\iflanguage{dutch}{\@logodutch}{\@logointernational}}{
         \includegraphics[height=1.5in]{\iflanguage{dutch}{\@logodutch}{\@logointernational}}
     }{
-        \fbox{\textcolor{red}{LOGO NOT FOUND}}%
+        \fbox{\textcolor{red}{LOGO NOT FOUND}}
     }
 }
 
