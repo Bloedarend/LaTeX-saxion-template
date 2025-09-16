@@ -1,0 +1,86 @@
+% saxion@maketitle.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saxion@maketitle}
+
+\RequirePackage{saxion@formatting}
+\RequirePackage{saxion@colors}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage[absolute,overlay]{textpos}
+\RequirePackage[abspath]{currfile}
+
+\makeatletter
+
+% Storage macros
+\newcommand{\@subtitle}{}
+
+% User-level macros to set values
+\renewcommand{\title}[1]{\renewcommand\@title{#1}}
+\newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
+\renewcommand{\author}[1]{\renewcommand\@author{#1}}
+\renewcommand{\date}[1]{\renewcommand\@date{#1}}
+
+% Logo macros
+\getabspath{saxion.sty}
+
+\newcommand{\@logodutch}{\theabsdir/img/lg_saxion_rgb.jpg}
+\newcommand{\@logointernational}{\theabsdir/img/lg_saxion_uas_rgb.jpg}
+
+\newcommand{\@logo}{
+    \IfFileExists{\iflanguage{dutch}{\@logodutch}{\@logointernational}}{
+        \includegraphics[height=1.5in]{\iflanguage{dutch}{\@logodutch}{\@logointernational}}
+    }{
+        \fbox{\textcolor{red}{LOGO NOT FOUND}}%
+    }
+}
+
+
+% Title page macro
+\newcommand{\saxion@maketitle}{
+    \thispagestyle{empty}
+    \hypersetup{pageanchor=false}
+    \begin{titlepage}
+
+    % Shapes
+    \begin{tikzpicture}[remember picture, overlay]
+    \fill[primary] (-1.25in, -0.3\paperheight) -- (-1.25in, -1\paperheight + 1.15in) -- (0.7\paperwidth, -1\paperheight + 1.15in);
+    \fill[primary] (-1.25in, -0\paperheight) -- (-1.25in, -0.2\paperheight) -- (0.7\paperwidth + 0.1\paperheight, -1\paperheight + 1.15in) -- (0.7\paperwidth + 0.3\paperheight, -1\paperheight + 1.15in);
+    \fill[secondary, opacity=0.4] (-1.25in, -0.05\paperheight) -- (-1.25in, -0.25\paperheight) -- (-1.25in + 0.25\paperheight, -0.5\paperheight) -- (-1.25in + 0.35\paperheight, -0.4\paperheight);
+    \fill[secondary, opacity=0.4] (-1.25in + 0.45\paperheight, -0.55\paperheight) -- (-1.25in + 0.55\paperheight, -0.45\paperheight) -- (0.7\paperwidth + 0.35\paperheight, -0.95\paperheight + 1.15in) -- (0.7\paperwidth + 0.15\paperheight, -0.95\paperheight + 1.15in);
+    \end{tikzpicture}
+
+    % Logo, title & subtitle
+    \begin{textblock*}{0.6\paperwidth}(0.575\paperwidth, 0.75in)
+    \@logo
+    \end{textblock*}
+
+    % Title & subtitle
+    \begin{textblock*}{0.5\paperwidth}(0.4\paperwidth, 3in)
+    \raggedleft
+    \sffamily
+    \vspace{0pt}
+    {\Huge \bfseries \textcolor{primary}{\@title}\par}
+    {\Large \textcolor{tertiary}{\@subtitle}\par}
+    \end{textblock*}
+
+    % Authors & date
+    \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west, xshift=1in, yshift=1in] at (current page.south west) {
+        \large
+        \begin{minipage}{0.5\paperwidth}
+        \color{white}\sffamily
+        \@author \\
+
+        \textbf{\@date}
+        \end{minipage}
+    };
+    \end{tikzpicture}
+
+    \end{titlepage}
+    \hypersetup{pageanchor=true}
+}
+
+\renewcommand{\maketitle}{\saxion@maketitle}
+
+\makeatother

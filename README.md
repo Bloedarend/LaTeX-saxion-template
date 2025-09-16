@@ -1,1 +1,1 @@
-# saxion-latex-template
+# LaTeX-saxion-template

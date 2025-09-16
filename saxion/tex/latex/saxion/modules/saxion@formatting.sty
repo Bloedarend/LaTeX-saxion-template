@@ -1,0 +1,50 @@
+% saxion@formatting.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saxion@formatting}
+
+\RequirePackage{saxion@colors}
+\RequirePackage[default]{sourcesanspro}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[justification=raggedright,singlelinecheck=false,font=it,belowskip=2pt]{caption}
+\RequirePackage{csquotes}
+\RequirePackage[\languagename, nameinlink, noabbrev]{cleveref}
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{xcolor}
+
+\makeatletter
+
+% Text formatting
+\singlespacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+\captionsetup[figure]{belowskip=-12pt}
+
+\hyphenpenalty=10000
+\tolerance=2000
+\emergencystretch=1em
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tertiary,
+    filecolor=tertiary,
+    urlcolor=tertiary,
+    citecolor=tertiary,
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+\setcounter{secnumdepth}{4}
+
+% Section formatting
+\titleformat{\section}{\LARGE\bfseries\sffamily\color{primary}}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titleformat{\subsection}{\Large\bfseries\sffamily\color{tertiary}}{\thesubsection}{1em}{}
+\titlespacing{\subsection}{0pt}{2ex}{0pt}
+\titleformat{\subsubsection}{\large\bfseries\sffamily\color{black}}{\thesubsubsection}{1em}{}
+\titlespacing{\subsubsection}{0pt}{1.5ex}{0pt}
+\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0pt}
+
+\makeatother

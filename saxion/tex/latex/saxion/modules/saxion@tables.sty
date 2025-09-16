@@ -1,0 +1,33 @@
+% saxion@tables.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saxion@tables}
+
+\RequirePackage{saxion@colors}
+\RequirePackage[singlelinecheck=off]{caption}
+\RequirePackage{tabularray}
+\RequirePackage{xparse}
+\RequirePackage{stylabletables}
+
+\makeatletter
+
+\SetTblrInner[htable]{
+    row{odd}={bg=secondary!20},
+    row{1}={bg=primary,fg=white,font=\bfseries},
+    hlines={0.1pt,solid,tertiary},
+    vlines={0.1pt,solid,tertiary},
+    rowsep=4pt,
+    colsep=8pt,
+    width = \textwidth,
+}
+
+\SetTblrInner[vtable]{
+    row{odd}={bg=secondary!20},
+    column{1}={bg=primary,fg=white,font=\bfseries},
+    hlines={0.1pt,solid,tertiary},
+    vlines={0.1pt,solid,tertiary},
+    rowsep=4pt,
+    colsep=8pt,
+    width = \textwidth,
+}
+
+\makeatother

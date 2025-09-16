@@ -1,0 +1,23 @@
+% saxion@code.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saxion@code}
+
+\RequirePackage{saxion@colors}
+\RequirePackage{minted}
+\RequirePackage{inconsolata}
+
+\setminted{
+    bgcolor=background,
+    fontsize=\small,
+    linenos=true,
+    xleftmargin=16pt,
+    xrightmargin=10pt,
+    numbersep=5pt,
+    framesep=3mm,
+    baselinestretch=1.2,
+    breaklines=true,
+    breakanywhere=true,
+    style=saxion,
+    tabsize=2,
+    autogobble=true,
+}

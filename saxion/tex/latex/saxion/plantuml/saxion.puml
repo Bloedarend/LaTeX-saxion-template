@@ -1,0 +1,126 @@
+@startuml
+!define PRIMARY #009c82
+!define BACKGROUND #F5F7FA
+!define BORDER #a9b8b4
+!define LINE #798f89
+!define TEXT #000000
+
+' === General Diagram Background ===
+skinparam backgroundColor BACKGROUND
+skinparam Shadowing false
+
+' === Default Font Colors ===
+skinparam defaultFontColor TEXT
+skinparam defaultFontSize 14
+
+' === Class Diagram ===
+skinparam classBackgroundColor BACKGROUND
+skinparam classBorderColor BORDER
+skinparam classArrowColor LINE
+skinparam classAttributeIconColor PRIMARY
+
+' === Object Diagram ===
+skinparam objectBackgroundColor BACKGROUND
+skinparam objectBorderColor BORDER
+
+' === Package ===
+skinparam packageBackgroundColor BACKGROUND
+skinparam packageBorderColor BORDER
+skinparam packageTitleBackgroundColor PRIMARY
+skinparam packageTitleFontColor BACKGROUND
+
+' === Component ===
+skinparam componentBackgroundColor BACKGROUND
+skinparam componentBorderColor BORDER
+skinparam componentArrowColor LINE
+
+' === Interface / Circle Interface ===
+skinparam interfaceBackgroundColor BACKGROUND
+skinparam interfaceBorderColor BORDER
+
+' === Activity Diagram ===
+skinparam activityBackgroundColor BACKGROUND
+skinparam activityBorderColor BORDER
+skinparam activityDiamondBackgroundColor BACKGROUND
+skinparam activityDiamondBorderColor BORDER
+skinparam activityArrowColor LINE
+skinparam activityStartColor PRIMARY
+skinparam activityEndColor PRIMARY
+skinparam activityBarColor PRIMARY
+
+' === State Diagram ===
+skinparam stateBackgroundColor BACKGROUND
+skinparam stateBorderColor BORDER
+skinparam stateArrowColor LINE
+skinparam stateStartColor PRIMARY
+skinparam stateEndColor PRIMARY
+
+' === Use Case ===
+skinparam usecaseBackgroundColor BACKGROUND
+skinparam usecaseBorderColor BORDER
+skinparam usecaseArrowColor LINE
+skinparam usecaseActorBorderColor BORDER
+skinparam usecaseActorBackgroundColor BACKGROUND
+
+' === Sequence Diagram ===
+skinparam sequenceArrowColor LINE
+skinparam sequenceLifeLineBorderColor BORDER
+skinparam sequenceLifeLineBackgroundColor BACKGROUND
+skinparam sequenceParticipantBorderColor BORDER
+skinparam sequenceParticipantBackgroundColor BACKGROUND
+skinparam sequenceBoxBackgroundColor BACKGROUND
+skinparam sequenceBoxBorderColor BORDER
+
+' === Note ===
+skinparam noteBackgroundColor BACKGROUND
+skinparam noteBorderColor BORDER
+skinparam noteFontColor #333333
+
+' === Partition / Swimlane ===
+skinparam partitionBackgroundColor BACKGROUND
+skinparam partitionBorderColor BORDER
+
+' === Legend ===
+skinparam legendBackgroundColor BACKGROUND
+skinparam legendBorderColor BORDER
+skinparam legendFontColor TEXT
+
+' === Title / Header / Footer ===
+skinparam titleBackgroundColor BACKGROUND
+skinparam titleBorderColor BORDER
+skinparam titleFontColor TEXT
+skinparam headerBackgroundColor BACKGROUND
+skinparam headerFontColor TEXT
+skinparam footerBackgroundColor BACKGROUND
+skinparam footerFontColor TEXT
+
+' === Collections ===
+skinparam collectionsBackgroundColor BACKGROUND
+skinparam collectionsBorderColor BORDER
+
+' === Rectangle / Card / Folder / Frame ===
+skinparam rectangleBackgroundColor BACKGROUND
+skinparam rectangleBorderColor BORDER
+skinparam cardBackgroundColor BACKGROUND
+skinparam cardBorderColor BORDER
+skinparam folderBackgroundColor BACKGROUND
+skinparam folderBorderColor BORDER
+skinparam frameBackgroundColor BACKGROUND
+skinparam frameBorderColor BORDER
+
+' === Storage / Queue / Cloud / Database ===
+skinparam storageBackgroundColor BACKGROUND
+skinparam storageBorderColor BORDER
+skinparam queueBackgroundColor BACKGROUND
+skinparam queueBorderColor BORDER
+skinparam cloudBackgroundColor BACKGROUND
+skinparam cloudBorderColor BORDER
+skinparam databaseBackgroundColor BACKGROUND
+skinparam databaseBorderColor BORDER
+
+' === Links & Hyperlinks ===
+skinparam hyperlinkColor PRIMARY
+skinparam hyperlinkUnderlineColor PRIMARY
+skinparam hyperlinkBackgroundColor BACKGROUND
+
+@enduml
